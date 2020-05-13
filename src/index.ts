@@ -4,6 +4,8 @@ import http from 'http';
 const server = http.createServer();
 const io = socket(server);
 
+const port = process.env.PORT || 3000
+
 io.on('connection', (socket) => {
   console.log('User connected');
   socket.on('new-message', (message) => {
@@ -12,4 +14,4 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(3001, () => console.log('Listening on port 3001'));
+server.listen(port, () => console.log('Listening on port ' + port));

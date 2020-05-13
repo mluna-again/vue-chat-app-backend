@@ -7,6 +7,7 @@ const socket_io_1 = __importDefault(require("socket.io"));
 const http_1 = __importDefault(require("http"));
 const server = http_1.default.createServer();
 const io = socket_io_1.default(server);
+const port = process.env.PORT || 3000;
 io.on('connection', (socket) => {
     console.log('User connected');
     socket.on('new-message', (message) => {
@@ -14,4 +15,4 @@ io.on('connection', (socket) => {
         io.emit('message', message);
     });
 });
-server.listen(3001, () => console.log('Listening on port 3001'));
+server.listen(port, () => console.log('Listening on port ' + port));
