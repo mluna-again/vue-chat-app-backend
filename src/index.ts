@@ -1,7 +1,11 @@
 import socket from 'socket.io';
 import http from 'http';
 
-const server = http.createServer();
+const server = http.createServer((req, res) => {
+  res.setHeader('Content-Type', 'text/html');
+  res.end('<h1>Hello World</h1>');
+});
+
 const io = socket(server);
 
 const port = process.env.PORT || 3000
