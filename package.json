@@ -2,7 +2,7 @@
   "name": "--placeholder--",
   "version": "1.0.0",
   "description": "--Just a placeholder--",
-  "main": "dist//index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc-watch --onsuccess \"node dist/index.js\" --onfailure \"echo Task failed successfully\""
