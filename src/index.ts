@@ -13,8 +13,6 @@ const port = process.env.PORT || 3000;
 const users: any = [];
 
 io.on('connection', (socket) => {
-  socket.emit('users-online', users);
-
   socket.on('new-message', (message) => {
     console.log(message);
     io.emit('message', message);
